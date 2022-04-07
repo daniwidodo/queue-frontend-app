@@ -1,0 +1,27 @@
+.body {
+    background: rgb(6, 167, 181);
+    background: linear-gradient(
+      30deg,
+      rgba(6, 167, 181, 1) 0%,
+      rgba(9, 9, 121, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    height: 100%;
+  }
+  
+  .content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-top: 5%;
+      
+      padding-bottom: 200px;
+      
+  }
+  
+  table {
+      background-color: aliceblue;
+      text-align: left;
+  }

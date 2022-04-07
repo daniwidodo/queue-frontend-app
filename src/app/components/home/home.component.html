@@ -1,30 +1,47 @@
-<div class="body" >
-    <div class="content">
-      <mat-card > 
-        <div style="text-align: center;">
-          <h1 style="border-bottom: solid 2px black ; font-weight: 800;">Aplikasi Antrian</h1>
-          <h4>Antrian No :</h4>
-          <h1 style="font-size: 3em; font-weight: 800;">A001</h1>
-          <h4>Mohon Menunggu</h4>
-          <h4 style="border-bottom: solid 2px black">Dateee!</h4>
-  
-          <h2>Budayakan antri untuk kenyamanan bersama</h2>
-          <h2>Terima Kasih atas Kunjungan Anda</h2>
-        </div>
-  
-  
-        <div style="display: flex; justify-content: space-around;">
-          <button mat-flat-button color="accent" style="width: 400px;">Cetak Struk</button>
-        </div>
-  
-  
-      </mat-card>
-      <h4 style="color: white;">Total Visitor : </h4>
-      <button mat-flat-button color="accent" routerLink="list-visitor" >Daftar Visitor</button>
-  
-    </div>
-  
-    <div class="float-button" style="position: absolute; bottom: 50px; right: 50px;">
-      <button mat-raised-button color="primary" routerLink="add-visitor">Buat Pengunjung Baru</button>
-    </div>
+<div class="body">
+  <div class="content">
+    <mat-card>
+      <div style="text-align: center">
+        <h1 style="border-bottom: solid 2px black; font-weight: 800">
+          Aplikasi Antrian
+        </h1>
+        <h4>Antrian No :</h4>
+        <h1 style="font-size: 3em; font-weight: 800">A001</h1>
+        <h4>Mohon Menunggu</h4>
+
+        <ngx-barcode [bc-value]="value" [bc-display-value]="true"></ngx-barcode>
+
+        <h4 style="border-bottom: solid 2px black"> 07 April 2022 - 9:25:40 PM</h4>
+
+        <h2>
+          Budayakan antri untuk kenyamanan bersama
+          <br />
+          Terima Kasih atas Kunjungan Anda
+        </h2>
+      </div>
+
+      <div style="display: flex; justify-content: space-around"></div>
+    </mat-card>
+    <h4 style="color: white">Total Visitor : 99 </h4>
   </div>
+
+  <div
+    class="float-button"
+    style="position: absolute; bottom: 50px; right: 50px; display: flex; flex-direction: column; justify-content: space-around;"
+  >
+    <button mat-flat-button color="accent" style="margin-bottom: 40px;">
+      Cetak Struk
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      routerLink="list-visitor"
+      style="margin-bottom: 40px;"
+    >
+      Daftar Visitor
+    </button>
+    <button mat-raised-button color="primary" routerLink="add-visitor">
+      Buat Pengunjung Baru
+    </button>
+  </div>
+</div>

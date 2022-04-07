@@ -1,1 +1,46 @@
-<p>visitor-add works!</p>
+<div class="body">
+    <div class="content">
+      <mat-card>
+        <h1 style="border-bottom: solid 2px black; font-weight: 800">
+            Daftar Visitor
+          </h1>
+
+          <form style="">
+            <div style="padding-left: 20%; padding-right: 20%; display: flex; flex-direction: column;">
+                <mat-form-field  >
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Dani Arthur Widodo" value="">
+                    
+                  </mat-form-field>
+      
+                  <mat-form-field  >
+                      <mat-label>Phone</mat-label>
+                      <input matInput placeholder="0812123123" value="">
+                      
+                    </mat-form-field>
+      
+                    <mat-form-field  >
+                      <mat-label>Alamat</mat-label>
+                      <textarea  matInput placeholder="Jalan Casablanca" value=""></textarea>
+                      
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary"> Buat  </button>
+            </div>
+            
+          </form>
+        
+      </mat-card>
+      
+    </div>
+  
+    <div
+      class="float-button"
+      style="position: absolute; top: 50px; left: 50px"
+    >
+      <button mat-flat-button color="accent" style="margin-right: 40px" routerLink="/"> 
+        Kembali
+      </button>
+     
+    </div>
+  </div>
