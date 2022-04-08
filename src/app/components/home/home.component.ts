@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerService } from 'src/app/services/server.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   value = '123456';
+  dataVisitor: any;
 
-  constructor() { }
+  constructor(private server: ServerService) { }
 
   ngOnInit(): void {
+    this.ambilDataVisitorDariServer();
+  }
+
+  ambilDataVisitorDariServer(){
+    this.server.getAllVisitors().subscribe(
+      x => { 
+        this.dataVisitor = x
+        console.log(x)
+      }
+    );
   }
 
 }

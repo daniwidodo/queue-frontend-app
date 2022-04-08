@@ -25,10 +25,14 @@
         </h2>
       </div>
 
-      <div style="display: flex; justify-content: space-around">
-        <button mat-flat-button color="accent" style="width: 80%" printSectionId="print-section" [printStyle]="{h4 : {'text-align': 'center'}, h1 : {'text-align': 'center'},  h2 : {'text-align': 'center'}}" ngxPrint>
+      <div style="display: flex; flex-direction: row; justify-content: space-evenly">
+        <button mat-flat-button color="accent" style="width: auto" printSectionId="print-section" [printStyle]="{h4 : {'text-align': 'center'}, h1 : {'text-align': 'center'},  h2 : {'text-align': 'center'}}" ngxPrint>
           Cetak Struk
           <mat-icon>printer</mat-icon>
+        </button>
+        <button mat-flat-button color="primary" style="width: auto" >
+          Selanjutnya
+          
         </button>
       </div>
     </mat-card>
@@ -47,53 +51,15 @@
           "
         >
 
-        <div style="padding-right: 20px;">
-          <h4 style="margin: 0; font-weight: 800; ">A001</h4>
-          <h2 style="margin: 0">Agus Suragus</h2>
+        <div style="padding-right: 20px;" *ngFor=" let visitor of dataVisitor">
+          <h4 style="margin: 0; font-weight: 800; ">{{visitor.nomerAntrian}}</h4>
+          <h2 style="margin: 0">{{visitor.name}}</h2>
           <h4 style="margin: 0; border-bottom: solid 1px gray; margin-bottom: 5px; font-style: italic;">
-            08 April 2022 - 10:25:45
+            {{visitor.date}}
           </h4>
         </div>
 
-        <div >
-          <h4 style="margin: 0">A001</h4>
-          <h2 style="margin: 0">Agus Suragus</h2>
-          <h4 style="margin: 0; border-bottom: solid 1px gray">
-            08 April 2022 - 10:25:45
-          </h4>
-        </div>
-
-        <div>
-          <h4 style="margin: 0">A001</h4>
-          <h2 style="margin: 0">Agus Suragus</h2>
-          <h4 style="margin: 0; border-bottom: solid 1px gray">
-            08 April 2022 - 10:25:45
-          </h4>
-        </div>
-
-        <div>
-          <h4 style="margin: 0">A001</h4>
-          <h2 style="margin: 0">Agus Suragus</h2>
-          <h4 style="margin: 0; border-bottom: solid 1px gray">
-            08 April 2022 - 10:25:45
-          </h4>
-        </div>
-
-        <div>
-          <h4 style="margin: 0">A001</h4>
-          <h2 style="margin: 0">Agus Suragus</h2>
-          <h4 style="margin: 0; border-bottom: solid 1px gray">
-            08 April 2022 - 10:25:45
-          </h4>
-        </div>
-
-        <div>
-          <h4 style="margin: 0">A001</h4>
-          <h2 style="margin: 0">Agus Suragus</h2>
-          <h4 style="margin: 0; border-bottom: solid 1px gray">
-            08 April 2022 - 10:25:45
-          </h4>
-        </div>
+      
 
         </div>
 
