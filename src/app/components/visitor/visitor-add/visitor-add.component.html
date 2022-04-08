@@ -21,19 +21,15 @@
 
           <mat-form-field>
             <mat-label>Phone</mat-label>
-            <input matInput placeholder="0812123123" value="" />
+            <input type="tel" matInput placeholder="0812123123" value="" />
           </mat-form-field>
 
           <mat-form-field>
-            <mat-label>Alamat</mat-label>
-            <textarea
-              matInput
-              placeholder="Jalan Casablanca"
-              value=""
-            ></textarea>
+            <mat-label>Nomer Antrian</mat-label>
+            <input type="text" matInput placeholder="Nomer Antrian" value="" />
           </mat-form-field>
 
-          <div style="display: flex; flex-direction: row; justify-content: space-between;">
+          <div style="display: flex; flex-direction: row; justify-content: space-between; padding-top: 40px;">
             <button mat-raised-button color="primary" style="width: 100px;">Buat</button>
 
             <button mat-flat-button color="accent" style="width: 100px;" routerLink="/">
