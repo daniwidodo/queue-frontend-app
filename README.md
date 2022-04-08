@@ -9,3 +9,4 @@ dengan beberapa fitur :
 - fitur edit memang tidak dibuat agar kalo ada perubahan harus mengikuti antrian yang ada
 - fitur user list di halaman depan untuk memudahkan monitor
 - aplikasi ini sy buat dengan inisiasi seperti produk jadi seperti di fasilitas umum pada umumnya
+- terdapat fungsi mendeteksi apakah antrian kosong atau tidak

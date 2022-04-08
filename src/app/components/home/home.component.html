@@ -41,6 +41,10 @@
     <mat-card style="width: 350px; margin-left: 40px">
       <div>
         <!-- list visitor -->
+        <div class="row" *ngIf="dataVisitor?.length == 0"> 
+          <h1>Tidak ada antrian</h1>
+        </div>
+
         <div
           style="
             height: 400px;
