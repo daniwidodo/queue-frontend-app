@@ -11,17 +11,22 @@ import {MatCardModule} from '@angular/material/card';
 import { VisitorAddComponent } from './components/visitor/visitor-add/visitor-add.component';
 import { VisitorListComponent } from './components/visitor/visitor-list/visitor-list.component';
 import { HomeComponent } from './components/home/home.component';
-import {MatInput, MatInputModule} from '@angular/material/input';
+import { MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 
+import { RouterModule } from '@angular/router';
 import { NgxBarcodeModule } from 'ngx-barcode';
+import { VisitorEditComponent } from './components/visitor/visitor-edit/visitor-edit.component';
+import {NgxPrintModule} from 'ngx-print';
 @NgModule({
   declarations: [
     AppComponent,
     VisitorAddComponent,
     VisitorListComponent,
-    HomeComponent
+    HomeComponent,
+    VisitorEditComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,10 @@ import { NgxBarcodeModule } from 'ngx-barcode';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule,
+    RouterModule,
+    NgxPrintModule
     
   ],
   providers: [],

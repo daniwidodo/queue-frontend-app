@@ -1,46 +1,53 @@
 <div class="body">
-    <div class="content">
-      <mat-card>
-        <h1 style="border-bottom: solid 2px black; font-weight: 800">
-            Daftar Visitor
-          </h1>
+  <div class="content">
+    <mat-card>
+      <h2 style="border-bottom: solid 1px gray; font-weight: 800">
+        Daftar Visitor
+      </h2>
 
-          <form style="">
-            <div style="padding-left: 20%; padding-right: 20%; display: flex; flex-direction: column;">
-                <mat-form-field  >
-                    <mat-label>Name</mat-label>
-                    <input matInput placeholder="Dani Arthur Widodo" value="">
-                    
-                  </mat-form-field>
-      
-                  <mat-form-field  >
-                      <mat-label>Phone</mat-label>
-                      <input matInput placeholder="0812123123" value="">
-                      
-                    </mat-form-field>
-      
-                    <mat-form-field  >
-                      <mat-label>Alamat</mat-label>
-                      <textarea  matInput placeholder="Jalan Casablanca" value=""></textarea>
-                      
-                    </mat-form-field>
+      <form>
+        <div
+          style="
+            padding-left: 20%;
+            padding-right: 20%;
+            display: flex;
+            flex-direction: column;
+          "
+        >
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Dani Arthur Widodo" value="" />
+          </mat-form-field>
 
-                    <button mat-raised-button color="primary"> Buat  </button>
-            </div>
-            
-          </form>
-        
-      </mat-card>
-      
-    </div>
-  
-    <div
-      class="float-button"
-      style="position: absolute; top: 50px; left: 50px"
-    >
-      <button mat-flat-button color="accent" style="margin-right: 40px" routerLink="/"> 
-        Kembali
-      </button>
-     
-    </div>
+          <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="0812123123" value="" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Alamat</mat-label>
+            <textarea
+              matInput
+              placeholder="Jalan Casablanca"
+              value=""
+            ></textarea>
+          </mat-form-field>
+
+          <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <button mat-raised-button color="primary" style="width: 100px;">Buat</button>
+
+            <button mat-flat-button color="accent" style="width: 100px;" routerLink="/">
+              Kembali
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </mat-card>
   </div>
+
+  <div
+    class="float-button"
+    style="position: absolute; top: 50px; left: 50px"
+  ></div>
+</div>

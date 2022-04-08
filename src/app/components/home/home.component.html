@@ -1,7 +1,7 @@
 <div class="body">
   <div class="content">
     <mat-card>
-      <div style="text-align: center">
+      <div style="text-align: center" id="print-section">
         <h1 style="border-bottom: solid 2px black; font-weight: 800">
           Aplikasi Antrian
         </h1>
@@ -9,9 +9,14 @@
         <h1 style="font-size: 3em; font-weight: 800">A001</h1>
         <h4>Mohon Menunggu</h4>
 
-        <ngx-barcode [bc-value]="value" [bc-display-value]="true"></ngx-barcode>
+        <div style="text-align: center;">
+          <ngx-barcode [bc-value]="value" [bc-display-value]="false" ></ngx-barcode>
+        </div>
+        
 
-        <h4 style="border-bottom: solid 2px black"> 07 April 2022 - 9:25:40 PM</h4>
+        <h4 style="border-bottom: solid 2px black">
+          07 April 2022 - 9:25:40 PM
+        </h4>
 
         <h2>
           Budayakan antri untuk kenyamanan bersama
@@ -20,28 +25,106 @@
         </h2>
       </div>
 
-      <div style="display: flex; justify-content: space-around"></div>
+      <div style="display: flex; justify-content: space-around">
+        <button mat-flat-button color="accent" style="width: 80%" printSectionId="print-section" [printStyle]="{h4 : {'text-align': 'center'}, h1 : {'text-align': 'center'},  h2 : {'text-align': 'center'}}" ngxPrint>
+          Cetak Struk
+          <mat-icon>printer</mat-icon>
+        </button>
+      </div>
     </mat-card>
-    <h4 style="color: white">Total Visitor : 99 </h4>
+
+    <!-- second card -->
+    <mat-card style="width: 350px; margin-left: 40px">
+      <div>
+        <!-- list visitor -->
+        <div
+          style="
+            height: 400px;
+            /* background-color: aquamarine; */
+            margin-bottom: 20px;
+            overflow: scroll;
+            overflow-x: hidden;
+          "
+        >
+
+        <div style="padding-right: 20px;">
+          <h4 style="margin: 0; font-weight: 800; ">A001</h4>
+          <h2 style="margin: 0">Agus Suragus</h2>
+          <h4 style="margin: 0; border-bottom: solid 1px gray; margin-bottom: 5px; font-style: italic;">
+            08 April 2022 - 10:25:45
+          </h4>
+        </div>
+
+        <div >
+          <h4 style="margin: 0">A001</h4>
+          <h2 style="margin: 0">Agus Suragus</h2>
+          <h4 style="margin: 0; border-bottom: solid 1px gray">
+            08 April 2022 - 10:25:45
+          </h4>
+        </div>
+
+        <div>
+          <h4 style="margin: 0">A001</h4>
+          <h2 style="margin: 0">Agus Suragus</h2>
+          <h4 style="margin: 0; border-bottom: solid 1px gray">
+            08 April 2022 - 10:25:45
+          </h4>
+        </div>
+
+        <div>
+          <h4 style="margin: 0">A001</h4>
+          <h2 style="margin: 0">Agus Suragus</h2>
+          <h4 style="margin: 0; border-bottom: solid 1px gray">
+            08 April 2022 - 10:25:45
+          </h4>
+        </div>
+
+        <div>
+          <h4 style="margin: 0">A001</h4>
+          <h2 style="margin: 0">Agus Suragus</h2>
+          <h4 style="margin: 0; border-bottom: solid 1px gray">
+            08 April 2022 - 10:25:45
+          </h4>
+        </div>
+
+        <div>
+          <h4 style="margin: 0">A001</h4>
+          <h2 style="margin: 0">Agus Suragus</h2>
+          <h4 style="margin: 0; border-bottom: solid 1px gray">
+            08 April 2022 - 10:25:45
+          </h4>
+        </div>
+
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-content: flex-end;
+            justify-content: space-around;
+          "
+          routerLink="add-visitor"
+        >
+          <button mat-flat-button color="accent" style="width: 80%">
+            Buat Pengunjung Baru
+            <mat-icon>person</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
   </div>
 
   <div
     class="float-button"
-    style="position: absolute; bottom: 50px; right: 50px; display: flex; flex-direction: column; justify-content: space-around;"
+    style="
+      position: absolute;
+      bottom: 50px;
+      right: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    "
   >
-    <button mat-flat-button color="accent" style="margin-bottom: 40px;">
-      Cetak Struk
-    </button>
-    <button
-      mat-raised-button
-      color="accent"
-      routerLink="list-visitor"
-      style="margin-bottom: 40px;"
-    >
-      Daftar Visitor
-    </button>
-    <button mat-raised-button color="primary" routerLink="add-visitor">
-      Buat Pengunjung Baru
-    </button>
+   
   </div>
 </div>
