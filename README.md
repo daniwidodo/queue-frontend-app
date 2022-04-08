@@ -10,3 +10,6 @@ dengan beberapa fitur :
 - fitur user list di halaman depan untuk memudahkan monitor
 - aplikasi ini sy buat dengan inisiasi seperti produk jadi seperti di fasilitas umum pada umumnya
 - terdapat fungsi mendeteksi apakah antrian kosong atau tidak
+
+sebenarnya cukup mudah untuk membuat seperti yang di contohkan hanya saja saya ber inisiatif untuk membuatnya seperti produk yang siap.
+cukup di integrasikan dengan electronJS maka aplikasi ini sudah bisa di deploy untuk desktop atau ionic framework untuk deploy di android/ios.
