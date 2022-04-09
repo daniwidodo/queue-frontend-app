@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
   index0antrian: any;
   index0date: any;
   value: any ;
+
+  newDate: any;
+  momenDate: any;
   constructor(private server: ServerService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -29,11 +32,9 @@ export class HomeComponent implements OnInit {
         this.dataVisitor = x;
         this.index0antrian = x[0].nomerAntrian; // [0].nomerAntrian
         this.index0name = x[0].name;// [0].name
-        //
-
         this.index0date = x[0].date;
         this.index0id = x[0]._id;
-        console.log(x);
+        console.log(x, this.momenDate);
         console.log(this.index0antrian, this.index0name, this.index0date, this.index0id)
       }
     );
@@ -54,10 +55,15 @@ export class HomeComponent implements OnInit {
   }
 
   handleChangeData(antrian: any, id: any, date: any){
-    console.log(antrian, id, date)
+    
     this.index0antrian = antrian;
     this.value = id;
     this.index0date = date;
+
+    date = this.newDate;
+    this.newDate = moment().format( 'DD - MMMM - YYYY, HH : MM  ');
+
+    console.log(antrian, id, date, 'new date : ' ,this.newDate);
 
   }
 

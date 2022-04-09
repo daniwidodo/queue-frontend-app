@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class ServerService {
 
   endPoint = 'http://localhost:4000/api/';
-
+  agoDate: any;
   constructor( private http: HttpClient) { }
 
   getAllVisitors(){
