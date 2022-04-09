@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServerService } from 'src/app/services/server.service';
 import { Visitor } from '../../../models/visitor';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-visitor-add',
@@ -19,18 +20,29 @@ export class VisitorAddComponent implements OnInit {
     date: new FormControl( this.sekarang )
   })
   
-  constructor( private server: ServerService ) { }
+  constructor( private server: ServerService, private _snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
   }
 
   addVisitor() {
-    console.log(this.visitorData.value);
+    
     this.server.addVisitor(this.visitorData.value).subscribe(
-      d => {
-        console.log(d)
-      }
+      (d: any) => {
+        console.log(d, d.status)
+        if (d.status == 200) {
+           this._snackBar.open( 'Data berhasil ditambahkan!', 'OK',{ duration: 2000})
+        } 
+      },
+      (error) => {
+         console.log(error);
+        // get the status as error.status
+     }
     );
+  }
+
+  public errorHandling = (control: string, error: string) => {
+    return this.visitorData.controls[control].hasError(error);
   }
 
 }

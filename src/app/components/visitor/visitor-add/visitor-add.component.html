@@ -16,12 +16,18 @@
         >
           <mat-form-field >
             <mat-label>Name</mat-label>
-            <input required matInput placeholder="Dani Arthur Widodo" value="" formControlName="name"  />
+            <input required minlength="3" matInput placeholder="Dani Arthur Widodo" value="" formControlName="name"  />
+            <mat-error *ngIf="errorHandling('name', 'minlength')">
+              minimal 3 karakter
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Phone</mat-label>
-            <input required type="tel" matInput placeholder="0812123123" value="" formControlName="phone" />
+            <input required minlength="3" type="tel" matInput placeholder="0812123123" value="" formControlName="phone" />
+            <mat-error *ngIf="errorHandling('phone', 'minlength')">
+              minimal 6 karakter
+            </mat-error>
           </mat-form-field>
 
           <mat-form-field>
@@ -30,7 +36,7 @@
           </mat-form-field>
 
           <div style="display: flex; flex-direction: row; justify-content: space-between; padding-top: 40px;">
-            <button mat-raised-button color="primary" style="width: 100px;" (click)="addVisitor()">Buat</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="!visitorData.valid" style="width: 100px;" (click)="addVisitor()">Buat</button>
 
             <button mat-flat-button color="accent" style="width: 100px;" routerLink="/">
               Kembali

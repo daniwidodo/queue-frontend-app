@@ -19,10 +19,10 @@ export class ServerService {
   }
 
   addVisitor( data: any ){
-    const headers = { 'content-type': 'application/json'}  
+    const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(data);
     console.log(body)
-    return this.http.post( this.endPoint + 'create' , body , {headers: headers} )
+    return this.http.post( this.endPoint + 'create' , body , {headers: headers, observe: 'response'} )
   }
 
   deleteVisitor(deleteId: any){

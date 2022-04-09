@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit {
      
   }
 
-  handleChangeData(message: string, action: string){
-    this._snackBar.open(message, action);
+  handleChangeData(){
+    
   }
 
 }
