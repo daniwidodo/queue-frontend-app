@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
         this.index0name = x[0].name;// [0].name
         this.index0date = x[0].date;
         this.index0id = x[0]._id;
-        console.log(x, this.momenDate);
+        console.log(x);
         console.log(this.index0antrian, this.index0name, this.index0date, this.index0id)
       }
     );

@@ -63,11 +63,11 @@
         <div style="padding-right: 20px; " *ngFor=" let visitor of dataVisitor" >
           <div (click)="handleChangeData(visitor.nomerAntrian, visitor._id, visitor.date)" style="display: flex; justify-content: space-between; border-bottom: solid 1px lightgray; margin-bottom: 20px;">
             <div>
-              <!-- <h4 style="margin: 0; font-weight: 800; ">{{visitor.nomerAntrian}}</h4> -->
-              <!-- <h2 style="margin: 0">{{visitor.name}}</h2> -->
-              <!-- <h4 style="margin: 0;  margin-bottom: 5px; font-style: italic;"> -->
-                <!-- {{visitor.date}} -->
-              <!-- </h4> -->
+              <h4 style="margin: 0; font-weight: 800; ">{{visitor.nomerAntrian}}</h4>
+              <h2 style="margin: 0">{{visitor.name}}</h2>
+              <h4 style="margin: 0;  margin-bottom: 5px; font-style: italic;">
+                {{visitor.date}}
+              </h4>
 
             </div>
 
