@@ -20,6 +20,11 @@ import { RouterModule } from '@angular/router';
 import { NgxBarcodeModule } from 'ngx-barcode';
 import { VisitorEditComponent } from './components/visitor/visitor-edit/visitor-edit.component';
 import {NgxPrintModule} from 'ngx-print';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +45,10 @@ import {NgxPrintModule} from 'ngx-print';
     MatTableModule,
     MatIconModule,
     RouterModule,
-    NgxPrintModule
+    NgxPrintModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
     
   ],
   providers: [],

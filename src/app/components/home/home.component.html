@@ -5,12 +5,17 @@
         <h1 style="border-bottom: solid 2px black; font-weight: 800">
           Aplikasi Antrian
         </h1>
+        <!--  -->
+        <div *ngIf="index0antrian?.length == undefined">
+          <h4>Tidak ada antrian</h4>
+        </div>
+        <!--  -->
         <h4>Antrian No :</h4>
         <h1 style="font-size: 3em; font-weight: 800">A001</h1>
         <h4>Mohon Menunggu</h4>
 
         <div style="text-align: center;">
-          <ngx-barcode [bc-value]="value" [bc-display-value]="false" ></ngx-barcode>
+          <ngx-barcode [bc-value]="value" [bc-display-value]="true" ></ngx-barcode>
         </div>
         
 
@@ -18,11 +23,11 @@
           07 April 2022 - 9:25:40 PM
         </h4>
 
-        <h2>
+        <h4 style="font-weight: 800;">
           Budayakan antri untuk kenyamanan bersama
           <br />
           Terima Kasih atas Kunjungan Anda
-        </h2>
+        </h4>
       </div>
 
       <div style="display: flex; flex-direction: row; justify-content: space-evenly">
@@ -30,10 +35,10 @@
           Cetak Struk
           <mat-icon>printer</mat-icon>
         </button>
-        <button mat-flat-button color="primary" style="width: auto" >
+        <!-- <button mat-flat-button color="primary" style="width: auto" >
           Selanjutnya
           
-        </button>
+        </button> -->
       </div>
     </mat-card>
 
@@ -55,12 +60,29 @@
           "
         >
 
-        <div style="padding-right: 20px;" *ngFor=" let visitor of dataVisitor">
-          <h4 style="margin: 0; font-weight: 800; ">{{visitor.nomerAntrian}}</h4>
-          <h2 style="margin: 0">{{visitor.name}}</h2>
-          <h4 style="margin: 0; border-bottom: solid 1px gray; margin-bottom: 5px; font-style: italic;">
-            {{visitor.date}}
-          </h4>
+        <div style="padding-right: 20px; " *ngFor=" let visitor of dataVisitor" >
+          <div (click)="getCurrentIndex()" style="display: flex; justify-content: space-between; border-bottom: solid 1px lightgray; margin-bottom: 20px;">
+            <div>
+              <h4 style="margin: 0; font-weight: 800; ">{{visitor.nomerAntrian}}</h4>
+              <h2 style="margin: 0">{{visitor.name}}</h2>
+              <h4 style="margin: 0;  margin-bottom: 5px; font-style: italic;">
+                {{visitor.date}}
+              </h4>
+
+            </div>
+
+            <div>
+              <button mat-flat-button color="warn" (click)="handleDelete(visitor._id)" style="position: relative; margin-left: auto;">
+                <mat-icon > delete </mat-icon>
+              </button>
+            </div>
+            
+
+
+           
+           
+          </div>
+         
         </div>
 
       

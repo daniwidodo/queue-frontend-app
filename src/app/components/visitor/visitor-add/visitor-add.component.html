@@ -5,7 +5,7 @@
         Daftar Visitor
       </h2>
 
-      <form>
+      <form [formGroup]="visitorData">
         <div
           style="
             padding-left: 20%;
@@ -14,23 +14,23 @@
             flex-direction: column;
           "
         >
-          <mat-form-field>
+          <mat-form-field >
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Dani Arthur Widodo" value="" />
+            <input required matInput placeholder="Dani Arthur Widodo" value="" formControlName="name"  />
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Phone</mat-label>
-            <input type="tel" matInput placeholder="0812123123" value="" />
+            <input required type="tel" matInput placeholder="0812123123" value="" formControlName="phone" />
           </mat-form-field>
 
           <mat-form-field>
             <mat-label>Nomer Antrian</mat-label>
-            <input type="text" matInput placeholder="Nomer Antrian" value="" />
+            <input required type="text" matInput placeholder="Nomer Antrian" value=""  formControlName="nomerAntrian" />
           </mat-form-field>
 
           <div style="display: flex; flex-direction: row; justify-content: space-between; padding-top: 40px;">
-            <button mat-raised-button color="primary" style="width: 100px;">Buat</button>
+            <button mat-raised-button color="primary" style="width: 100px;" (click)="addVisitor()">Buat</button>
 
             <button mat-flat-button color="accent" style="width: 100px;" routerLink="/">
               Kembali

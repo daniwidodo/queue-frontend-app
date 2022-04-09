@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   value = '123456';
   dataVisitor: any;
 
+  index0name: any;
+  index0antrian: any;
   constructor(private server: ServerService) { }
 
   ngOnInit(): void {
@@ -19,11 +21,30 @@ export class HomeComponent implements OnInit {
 
   ambilDataVisitorDariServer(){
     this.server.getAllVisitors().subscribe(
-      x => { 
-        this.dataVisitor = x
-        console.log(x)
+      (x: any) => { 
+        this.dataVisitor = x;
+        this.index0antrian = x[0].nomerAntrian; // [0].nomerAntrian
+        console.log(x, this.index0antrian)
       }
     );
+  }
+
+  getCurrentIndex( ){
+    console.log();
+  }
+
+  handleDelete( deleteId: any ){
+    console.log(deleteId);
+    this.server.deleteVisitor( deleteId ).subscribe(
+      () => { this.ambilDataVisitorDariServer(); }
+      
+     );
+
+     
+  }
+
+  handleChangeData(){
+    
   }
 
 }
