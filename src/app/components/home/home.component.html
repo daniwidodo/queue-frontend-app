@@ -11,16 +11,16 @@
         </div>
         <!--  -->
         <h4>Antrian No :</h4>
-        <h1 style="font-size: 3em; font-weight: 800">A001</h1>
+        <h1 style="font-size: 3em; font-weight: 800">{{index0antrian}}</h1>
         <h4>Mohon Menunggu</h4>
 
         <div style="text-align: center;">
-          <ngx-barcode [bc-value]="value" [bc-display-value]="true" ></ngx-barcode>
+          <ngx-barcode [bc-value]="value? index0id : index0id" [bc-display-value]="true" ></ngx-barcode>
         </div>
         
 
         <h4 style="border-bottom: solid 2px black">
-          07 April 2022 - 9:25:40 PM
+          {{index0date}}
         </h4>
 
         <h4 style="font-weight: 800;">
@@ -61,7 +61,7 @@
         >
 
         <div style="padding-right: 20px; " *ngFor=" let visitor of dataVisitor" >
-          <div (click)="handleChangeData()" style="display: flex; justify-content: space-between; border-bottom: solid 1px lightgray; margin-bottom: 20px;">
+          <div (click)="handleChangeData(visitor.nomerAntrian, visitor._id, visitor.date)" style="display: flex; justify-content: space-between; border-bottom: solid 1px lightgray; margin-bottom: 20px;">
             <div>
               <h4 style="margin: 0; font-weight: 800; ">{{visitor.nomerAntrian}}</h4>
               <h2 style="margin: 0">{{visitor.name}}</h2>

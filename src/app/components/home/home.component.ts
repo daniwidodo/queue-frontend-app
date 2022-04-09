@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerService } from 'src/app/services/server.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import * as moment from 'moment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,11 +9,14 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
 
-  value = '123456';
+  
   dataVisitor: any;
 
   index0name: any;
+  index0id: any;
   index0antrian: any;
+  index0date: any;
+  value: any ;
   constructor(private server: ServerService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -24,7 +28,13 @@ export class HomeComponent implements OnInit {
       (x: any) => { 
         this.dataVisitor = x;
         this.index0antrian = x[0].nomerAntrian; // [0].nomerAntrian
-        console.log(x, this.index0antrian)
+        this.index0name = x[0].name;// [0].name
+        //
+
+        this.index0date = x[0].date;
+        this.index0id = x[0]._id;
+        console.log(x);
+        console.log(this.index0antrian, this.index0name, this.index0date, this.index0id)
       }
     );
   }
@@ -43,8 +53,12 @@ export class HomeComponent implements OnInit {
      
   }
 
-  handleChangeData(){
-    
+  handleChangeData(antrian: any, id: any, date: any){
+    console.log(antrian, id, date)
+    this.index0antrian = antrian;
+    this.value = id;
+    this.index0date = date;
+
   }
 
 }

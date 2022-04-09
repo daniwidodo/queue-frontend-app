@@ -31,7 +31,7 @@ export class VisitorAddComponent implements OnInit {
       (d: any) => {
         console.log(d, d.status)
         if (d.status == 200) {
-           this._snackBar.open( 'Data berhasil ditambahkan!', 'OK',{ duration: 2000})
+           this._snackBar.open( 'Data berhasil ditambahkan!', '',{ duration: 2000})
         } 
       },
       (error) => {
