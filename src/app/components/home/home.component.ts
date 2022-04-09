@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServerService } from 'src/app/services/server.service';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   index0name: any;
   index0antrian: any;
-  constructor(private server: ServerService) { }
+  constructor(private server: ServerService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.ambilDataVisitorDariServer();
@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit {
      
   }
 
-  handleChangeData(){
-    
+  handleChangeData(message: string, action: string){
+    this._snackBar.open(message, action);
   }
 
 }
